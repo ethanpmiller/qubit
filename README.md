@@ -45,26 +45,92 @@ Add new shapes or colors in shapes.js.
 Enhance UI or add animations for better visuals.
 
 
-## Project Structure:
-                          
-qubit/
-│
-├── index.html
-├── style.css
-├── js/
-│   ├── game.js
-│   ├── shapes.js
-│   ├── sound.js
-│   └── ui.js
-└── README.md
+## Troubleshooting:
+
+If the game isn't running when you open index.html, it might be due to a few common issues. Here's a checklist to troubleshoot and ensure everything works correctly:
+
+1. Browser Security Restrictions
+
+Modern browsers restrict JavaScript modules and certain features when opening files directly from the filesystem (file:// protocol).
+
+Solution: Run a local web server instead of opening the file directly.
+
+2. How to run a local server
+
+Using Python (if installed):
+
+Navigate to your project directory in the terminal or command prompt.
+Run: python -m http.server (Python 3)
+Open your browser and go to: http://localhost:8000
+
+
+Using VSCode Live Server extension:
+
+Install Live Server.
+Open your project folder in VSCode.
+Right-click index.html and select "Open with Live Server".
+
+
+3. Check the Console for Errors
+
+Open your browser's Developer Tools (F12 or right-click → Inspect → Console).
+Look for error messages related to module loading or other issues.
+
+Common issues include:
+
+Incorrect script paths.
+Syntax errors.
+CORS restrictions when loading modules.
+
+
+4. Ensure Correct File Paths
+
+Your index.html references: <script type="module" src="js/main.js"></script>
+Make sure the folder structure matches:
+          
+            
+            
+          
+    qubit/
+      ├── index.html
+      ├── style.css
+      └── js/
+        ├── main.js
+        ├── game.js
+        ├── shapes.js
+        └── sound.js
+      
+All files should be in the correct locations.
+
+5. Verify JavaScript Compatibility
+
+Make sure your browser supports ES6 modules (most modern browsers do).
+
+
+Summary:
+
+Never open HTML files directly from the file system (file://) in modern browsers for modules.
+Use a local server (Python, VSCode Live Server, or other tools).
+Check the browser console for errors and fix any path issues.
+
+
+Example: Running a Simple Python Server
+Open your terminal in the project directory and run:
+      
+            
+            
+          
+    python -m http.server
+
+Then go to: http://localhost:8000/index.html
 
 
 ## Description of Files:
 
-index.html: Main HTML file, loads CSS and JavaScript modules.
-style.css: Contains styling for the game UI.
-js/game.js: Core game logic, handles game loop, shape movements, collisions.
-js/shapes.js: Defines the shapes and rotations.
-js/sound.js: Manages tone generation, background music, and sound effects.
-js/ui.js: Handles UI updates like score display, leaderboard, controls.
-README.md: Project overview, setup instructions, gameplay directions.
+    index.html: Main HTML file, loads CSS and JavaScript modules.
+    style.css: Contains styling for the game UI.
+    js/game.js: Core game logic, handles game loop, shape movements, collisions.
+    js/shapes.js: Defines the shapes and rotations.
+    js/sound.js: Manages tone generation, background music, and sound effects.
+    js/ui.js: Handles UI updates like score display, leaderboard, controls.
+    README.md: Project overview, setup instructions, gameplay directions.
