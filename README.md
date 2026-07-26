@@ -1,7 +1,7 @@
 ![alt text](qubit.png)
 
 # qubit
-Qubit Tetris is a browser-based, classic Tetris clone featuring colorful pieces, persistent high scores, and immersive tone-generated background music and sound effects. Built with modern JavaScript, it emphasizes modularity and clarity, making it easy to understand, customize, and extend.
+Qubit is a browser-based, classic Tetris clone featuring colorful pieces, persistent high scores, and immersive tone-generated background music and sound effects. Built with modern JavaScript, it emphasizes modularity and clarity, making it easy to understand, customize, and extend.
 
 
 ## Features:
@@ -16,7 +16,7 @@ Fully playable in modern browsers.
 
 ## Overview:
 
-Qubit Tetris is a modern, modular Tetris clone that uses tone-based sound effects and background music. Built with separate JavaScript modules, it is easy to understand, extend, and customize.
+Qubit is a modern, modular Tetris clone that uses tone-based sound effects and background music. Built with separate JavaScript modules, it is easy to understand, extend, and customize.
 
 
 ## How to Run:
@@ -60,7 +60,11 @@ Solution: Run a local web server instead of opening the file directly.
 Using Python (if installed):
 
 Navigate to your project directory in the terminal or command prompt.
-Run: python -m http.server (Python 3)
+
+Run (Python 3):
+
+	python -m http.server
+
 Open your browser and go to: http://localhost:8000
 
 
