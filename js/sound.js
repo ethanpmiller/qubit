@@ -1,4 +1,6 @@
-// Tone generator and background music
+// js/sound.js
+console.log('AudioContext:', window.AudioContext);
+console.log('AudioContext WebKit:', window.webkitAudioContext);
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 export function playTone(frequency, duration=200) {
@@ -10,7 +12,7 @@ export function playTone(frequency, duration=200) {
 
   oscillator.type = 'sine';
   oscillator.frequency.value = frequency;
-  gainNode.gain.value = 0.2;
+  gainNode.gain.value = 0.2; // volume
 
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
@@ -19,12 +21,11 @@ export function playTone(frequency, duration=200) {
   setTimeout(() => oscillator.stop(), duration);
 }
 
-let musicInterval = null;
 export function startMusic() {
   const notes = [261.63, 293.66, 329.63, 349.23];
   let index = 0;
-  if(musicInterval) clearInterval(musicInterval);
-  musicInterval = setInterval(() => {
+  if(window.musicInterval) clearInterval(window.musicInterval);
+  window.musicInterval = setInterval(() => {
     playTone(notes[index], 400);
     index = (index + 1) % notes.length;
   }, 500);
