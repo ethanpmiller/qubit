@@ -1,0 +1,27 @@
+body {
+  background: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+canvas {
+  background: #000;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #555;
+}
+#score, #leaderboard {
+  margin-top: 10px;
+}
+#leaderboard {
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: left;
+}
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
